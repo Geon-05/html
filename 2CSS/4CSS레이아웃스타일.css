@@ -1,0 +1,109 @@
+div{
+    border: 1px solid black;
+}
+
+.box1{
+    border: 1px solid red;
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+}
+
+.size1{
+    width: 100px;
+    height: 20px;
+}
+
+.size2{
+    width: 20em;
+    height: 20px;
+}
+
+.size3{
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+}
+.block{
+    display: block;
+}
+.inline{
+    display: inline;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+/* 메뉴 만들때 목록태그를 많이 사용 */
+
+ul{
+    /* 목록의 기본스타일 초기화 */
+    list-style: none;
+    padding: 0px;
+}
+
+li{
+    /* 박스의 크기를 지정할때
+    border영역까지를 박스의 크기로 지정 */
+    box-sizing: border-box;
+    border: 1px dotted red;
+    display: inline-block;
+    width: 25%;
+    height: 50px;
+    
+}
+
+.border{
+    width: 50px;
+    height: 50px;
+    margin: 10px 20px 30px 40px;
+    border: 10px solid red;
+
+    border-style: dashed;
+    border-width: 3px;
+    border-color: black;
+}
+
+#border-test1{
+    border-style: dotted;
+}
+
+#border-test2{
+    border-style: dashed;
+}
+
+#border-test3{
+    border-style: double;    
+}
+
+#border-test4{
+    border-style: groove;
+}
+
+#border-test5{
+    border-style: inset;
+    box-shadow: 10px 10px 10px #000;
+    border-width: 10px 20px 30px 40px;
+}
+
+.round{
+    border-width: 20px;
+    border-style: solid;
+    /* 50%=원모양 */
+    border-radius: 50%;
+}
+
+.round1{
+    width: 50px;
+    height: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.round2{
+    width: 50px;
+    height: 50px;
+    border-top-color: red;
+    border-width: 10px 0px 0px 0px;
+}

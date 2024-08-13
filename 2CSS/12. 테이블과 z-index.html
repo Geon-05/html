@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표스타일</title>
+    <style>
+        .table2{
+        /* table, td, th{ */
+            /* 테이블 제목의 위치 */
+            caption-side: bottom;
+            width: 300px;
+            /* 테이블에 보더를 줄경우 테이블 외곽에 보더가 적용 */
+            border: 1px solid;
+            /* 테이블과 셀의 간격 : 가로 세로 */
+            border-spacing: 50px 20px;
+            /* 테이블과 셀의 간격을 합치는 방법 */
+            border-collapse: collapse;
+            /* border-collapse: separate; <-- 분리시킴 (기본속성)*/
+            /* 빈셀 숨기기 
+            empty-cells: hide;*/
+        }
+
+        tr{
+            /* 테이블의 border-collapse: collapse 인 경우 border가 적용  */
+            /* border: 1px solid; */
+        }
+        .table1{
+            border-collapse: collapse;
+            /* word-break : 셀의 범위를 벗어난 글자 줄바꿈
+            normal : 기본 - 브라우저가 알아서 처리
+            break-all : 단어의 중간에서 줄바꿈 처리
+            keep-all : 단어 단위로
+            */
+            word-break: keep-all;
+
+            width: 300px;
+
+        }
+        .table1 td{
+            border-bottom: 1px dotted;
+            width: 80px;
+            height: 100px;
+            text-align: center;
+
+        }
+        thead tr{
+            /* border-top: 1px solid;
+            border-bottom: 1px solid; */
+        }
+
+        table1 {
+            /* 요소를 화면에서 제거 하는 방법 */
+            /* 영역까지 숨김 */
+            /* display: none; */
+            /* 영역은 유지한채로 요소만 숨김 */
+            visibility: hidden;
+        }
+
+        .none{
+            display: none;
+        }
+        .invisible{
+            visibility: hidden;
+        }
+        h3:active + table {
+            /* block, inline, inline-block */
+            display: table;
+            visibility: visible;
+        }
+
+        #z-wrap{
+            /* 기준상자 */
+            position: relative;
+        }
+
+        .z-test{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+        }
+
+        #z1{
+            top: 100px;
+            left: 100px;
+            background-color: aquamarine;
+        }
+        #z2{
+            top: 50px;
+            left: 50px;
+            background-color: aqua;
+            /* 요소들이 겹치는 경우, 어떤 요소가 위에 나올지 결정
+            값이 큰 요소가 다른 요소의 상위에 표시됨
+            정수값을 입력(음수값 사용가능)
+            */
+            z-index: -99;
+        }
+        #z3{
+            background-color: antiquewhite;
+
+        }
+    </style>
+</head>
+<body>
+    
+<h3>테이블</h3>
+<table class="table1 invisible none">
+    <caption>프로축구 경기 일정</caption>
+    <thead>
+        <tr>
+            <th>지역</th>
+            <th>매칭</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>울산</td>
+        <td>울산 vs 인천</td>
+    </tr>		
+    <tr>
+        <td>부산</td>
+        <td>부산 vs 대전</td>
+    </tr>		
+    <tr>
+        <td>서울</td>
+        <td>서울 vs 강원</td>
+    </tr>	
+    <tr>
+        <td>기타</td>
+        <td></td>
+    </tr>
+    </tbody>		
+</table> 
+
+<h3>z-index</h3>
+<div id="z-wrap">
+    <div class="z-test" id="z1"></div>
+    <div class="z-test" id="z2"></div>
+    <div class="z-test" id="z3"></div>
+</div>
+
+
+</body>
+</html>

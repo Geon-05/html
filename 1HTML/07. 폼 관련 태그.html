@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 관련 태그</title>
+</head>
+<body>
+    <!--  
+    <form> 태그
+        form 태그는 html에서 사용자가 입력할 수 있는 양식을 제공하는 태그이다.
+        form 태그 내의 <input> 태그들을 통해서 사용자가 입력한 정보를 서버로 넘기면서
+        요청하는 역할을 한다.
+
+    * 속성
+        action : 폼 내에 입력된 값들을 전달할 서버에 대한 내용을 기입한다.
+        method : get / post 방식으로 전송 방식을 지정한다.
+            get : 서버에 사용자가 입력한 값들을 URL에 노출시켜서 전달하는 방식
+            post : 서버에 사용자가 입력한 값들을 URL에 노출시키지 않고 전달하는 방식
+        autocomplete : 이전 입력 내용을 출력하는 기능
+        (default : on, 각 태그별로 지정 가능)
+        
+    -->
+    <h1>로그인</h1>
+    <!--method를 지정 하지 않으면 get방식으로 요청 된다-->
+    <form action="login.html">
+        <!-- 서버에 값을 넘길때 필요한 속성
+            name속성이 없으면 서버에 값이 넘어가지 않아요!!!!!!!!!
+            name속성값 = value속성값 
+        -->
+        <!-- id속성은 화면에 있는 요소를 선택 할때 많이 사용 됩니다 
+            value 속성은 기본값 -->
+        id : <input type="text" name="user_id" id="user_id" value="user1">
+        <br>pw : <input type="password" name="user_pw" id="user_pw" value="1234">
+
+        <!--name 속성을 입력 하지 않으면 서버로 값을 전달 할 수 없다.-->
+        <br><input type="text" name="" id="test" value="name속성이 없으면 서버에 전달되지 않아요">
+
+        <br><button>로그인</button>
+
+    </form>
+
+    <hr>
+
+    <h1>회원가입</h1>
+    <form action="login.html">
+
+        <fieldset>
+            <legend>회원정보</legend>
+            <!--
+                label태그 : 폼 요소에 레이블을 붙일때 사용
+                - 레이블을 클릭시 폼요소가 선택 됩니다
+                - css 적용시에도 사용
+            -->
+            <label>
+                <!-- text : 한줄짜리 텍스트를 입력-->
+                아이디 : <input type="text" name="id" id="" 
+                    placeholder="아이디를 입력하세요">
+            </label>
+            <label>
+                <!-- password : 비밀번호 입력 (입력값이 확인할 수 없음)
+                placeholder속성 : 필드에 값이 없을때 힌트처럼 보여주는 값-->
+                <br>비밀번호 : <input type="password" name="pw" id=""
+                        placeholder="비밀번호를 입력하세요">
+            </label>
+
+            submit = 폼 전송, 서버에 요청
+            <br>
+            <!-- email : submit버튼을 클릭했을때 이메일 형식을 체크합니다
+                 url : 폼 전송시 http:// 또는 https:// 가 있는지 확인
+                 search : 검색어 입력후 오른쪽에 x버튼이 생겨서 검색어를 삭제할 수 있다
+                 
+                겉모습은 텍스트 필드와 같지만 각각 정보에 맞게 세분화된 
+                기능을 제공하는 텍스트 상자이다
+
+                required속성 : 필수값-->
+            이메일 : <input type="email" name="email" required>
+            <br>홈페이지 : <input type="url" name="url" value="http://">
+            <br>검색어 : <input type="search" name="search" id="">
+        </fieldset>
+
+        <fieldset>
+            <legend>성별</legend>
+            <!-- radio : 여러개중 한개를 선택 할때 사용 
+                동일한 name속성으로 묶인 데이터중 선택된 요소만 전송 
+                checked : 요소를 선택 해주는 속성
+            -->
+            <input type="radio" name="gender" value="M" checked>남자
+            <input type="radio" name="gender" value="F">여자
+        </fieldset>
+        
+        <fieldset>
+            <!-- checkbox : 여러항목중 여러개를 선택-->
+            <legend>취미</legend>
+            <input type="checkbox" name="hobby" id="" value="baseball" checked>야구
+            <input type="checkbox" name="hobby" id="" value="football">축구
+            <input type="checkbox" name="hobby" id="" value="basketball">농구
+        </fieldset>
+        <button type="submit">회원가입</button>
+        
+    </form>
+
+    <h1>숫자와 관련된 input 태그들</h1>
+    <form action="login.html">
+        <!-- number : 숫자를 입력하면 오른쪽에 스핀박스가 표시 됩니다
+            (스핀박스 : 위/아래 화살표 버튼)
+            최대값, 최소값, 증감값을 지정 할 수 있다-->
+        <input type="number" name="number" id="" value="0" 
+            min="0" max="100" step="10">
+        <!-- range : 슬라이드 바를 통한 숫자 지정-->
+        <br><input type="range" name="range" id=""
+            value="300" min="100" max="1000" step="10">
+
+        <br><button type="submit">전송</button>
+        <button type="reset">초기화</button>
+    </form>
+</body>
+</html>

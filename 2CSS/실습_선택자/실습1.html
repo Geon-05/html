@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>속성 선택자</title>
+<style>
+	ul{
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	li{
+		float: left;
+
+		width: 100px;
+		height: 50px;
+
+		border: 1px solid;
+	}
+	ul ~ h3{
+		clear: both;
+		padding-top: 30px;
+	}
+	a[title^="us"]{
+		padding-left: 20px;
+		background: url(../images/n_us.png) no-repeat left center;
+	}
+	a[title|="ja"]{
+		padding-left: 20px;
+		background: url(../images/n_jp.png) no-repeat left center;
+	}
+	a[title$="chinese"]{
+		padding-left: 20px;
+		background: url(../images/n_ch.png) no-repeat left center;
+	}
+	a[href ^="http"]{
+		padding-right: 20px;
+		background: url(../images/hwp_icon.gif) no-repeat right center;
+	}
+	a[href$="xls"]{
+		padding-right: 20px;
+		background: url(../images/excel_icon.gif) no-repeat right center;
+	}
+
+	/* 링크 */
+	a:link{
+		text-decoration: none;		
+	}
+	/* 방문했던 링크 */
+	a:visited{
+		color: black;
+	}
+	/* 마우스가 요소위로 올라갔을때 */
+	a:hover{
+		background-color: black;
+	}
+    /* 요소가 클릭되었을떄 */
+	a:active{
+		background-color: red;
+	}
+</style>
+</head>
+
+<body>
+	<h3>외국어 서비스</h3>
+	<ul class="nation">
+		<li><a href="#" title="us-aaa">영어</a></li>
+		<li><a href="#" title="ja-panese">일본어</a></li>
+		<li><a href="#" title="chinese">중국어</a></li>
+		
+	</ul>
+	
+	<h3>회사 소개 파일 다운 받기</h3>
+
+	<ul>
+		<li><a href="http://naver.com">hwp 파일</a></li>
+		<li><a href="intro.xls">엑셀 파일</a></li>
+	</ul>
+  </body>
+ </html>

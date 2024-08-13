@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급선택자</title>
+    <style>
+        li{
+            display: inline-block;
+            line-height: 100px;
+        }
+        a[href] {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            background-color: yellow;
+            text-decoration: none;
+            color: black;
+        }
+        .fs20{
+            font-size: 50px;
+        }
+        ul{
+            height: 100px;
+            line-height: 100px;
+            border: 1px solid red;
+        }
+        li{
+            border: 1px solid black;
+        }
+        i{
+            border:1px solid black; 
+            vertical-align: middle;  
+        }
+    </style>
+<script src="https://kit.fontawesome.com/08035877d1.js" crossorigin="anonymous"></script></head>
+<body>
+    <h2>고급 선택자</h2>
+
+    (li>a{메뉴$})*5 <br>
+    <ul>
+        <li><i class="fa-solid fa-house fs20"></i></li>
+        <li><a>메인메뉴 : </a></li>
+        <li><a href="#"><i class="fa-solid fa-house fs20"></i></a></li>
+        <li><a href="#">메뉴2</a></li>
+        <li><a href="#">메뉴3</a></li>
+        <li><a href="#">메뉴4</a></li>
+        <li><a href="#">메뉴5</a></li>
+
+
+    </ul>
+
+    
+    
+</body>
+</html>

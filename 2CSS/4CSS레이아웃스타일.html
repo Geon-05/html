@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="4CSS레이아웃스타일.css">
+</head>
+<body>
+    <h1>레이아웃 스타일</h1>
+
+    <h2>기본 스타일</h2>
+    <h3>width, height</h3>
+    <h4>고정크기(px)</h4>
+    <!-- class를 여러개 작성하는 방법
+    공백을 입력하고 class명을 나열-->
+    <div class="box1 size1">고정크기 box</div>
+    <h4>가변크기(em, %)</h4>
+    <div class="box1 size2">가변크기 box</div>
+    <!-- 컨텐츠가 없는경우 높이는 0이됨
+    ->크기를 지정하기 전까지 영역을 확인할수 없음 -->
+    <div class="size2"></div>
+    
+    <hr>
+
+    <!-- 블럭요소를 인라인요소로/인라인요소를 블럭요소로 변경하는 방법
+         블럭요소 : 한줄을 몽땅 차지
+         인라인블럭 : 영역을 가질수 있고, 한줄에 여러개 출력 가능
+         인라인 : 컨텐츠 영역 만큼만 차지 (영역을 가질수없다 = 크기지정x) 
+    -->
+    <h2>화면 배치 방법 변경(블럭 -> 인라인블럭)</h2>
+    <p>블럭 형식</p>
+    <div class="size3 block">영역1</div>
+    <div class="size3 block">영역2</div>
+    <div class="size3 block">영역3</div>
+    <div class="size3 block">영역4</div>
+    <div class="size3 block">영역5</div>
+    <p>인라인 형식</p>
+    <div class="size3 inline">영역1</div>
+    <div class="size3 inline">영역2</div>
+    <div class="size3 inline">영역3</div>
+    <div class="size3 inline">영역4</div>
+    <div class="size3 inline">영역5</div>
+    <p>인라인 블럭 형식</p>
+    <div class="size3 inline-block">영역1</div>
+    <div class="size3 inline-block">영역2</div>
+    <div class="size3 inline-block">영역3</div>
+    <div class="size3 inline-block">영역4</div>
+    <div class="size3 inline-block">영역5</div>
+
+    <hr>
+
+    <ul>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+    </ul>
+
+    <hr>
+    <h2>테두리 스타일</h2>
+
+    <div class="border" id="border-test1"></div>
+    <div class="border" id="border-test2"></div>
+    <div class="border" id="border-test3"></div>
+    <div class="border" id="border-test4"></div>
+    <div class="border" id="border-test5"></div>
+
+    <h2>테두리 둥글게 처리</h2>
+    <div class="border round"></div>
+    <div class="round1"></div>
+    <div class="round2"></div>
+
+</body>
+</html>

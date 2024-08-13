@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지셔닝</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .box1{
+            background-color: red;
+            
+            /*
+            기준
+
+            배치를 하기 위해서 포지션 속성 값을 지정 합니다.
+            static : 문서 흐름에 맞게 배치 됩니다.
+            relative : static의 위치를 기준으로(나의위치)
+            absolute : 가장 가까운 relative를 기준으로 배치 
+            (바디영역(창)을 기준으로 함)
+            */
+            position: absolute;
+            top : 0px;
+            left: 0px;
+        }
+        .box2{
+            /*요소의 현재 위치로 부터 배치*/
+            position: absolute;
+            bottom : 0px;
+            left: 0px;
+        }
+
+        *{margin: 0px;}
+        #outer{
+            position: relative;
+            border: 2px solid black;
+        }
+        #first{
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+        }
+        #second{
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        #third{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+        #fixed{
+            position: fixed;
+            /*창을 기준으로 배치, 스크롤시에도 고정*/
+            right: 30px;
+            top: 30px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h2>포지셔닝</h2>
+    CSS를 이용해서 여러 요소를 적절하게 배치하는것
+
+    <div class="box1"></div>
+    <div class="box2">박스</div>
+    <hr>
+
+    <div id="outer">
+        <p id="first"></p>
+        <p id="second"></p>
+        <p id="third"></p>
+    </div>
+
+    <div id="fixed">fixed</div>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

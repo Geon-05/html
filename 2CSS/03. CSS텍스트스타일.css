@@ -1,0 +1,91 @@
+/* 전체선택후 shift + tab */
+#ff1{
+    font-family: "궁서체";
+}
+#ff2{
+    font-family: 굴림체;
+}
+#ff3{
+    /* font-family: "없는 글꼴", "두번째", 돋움체; */
+    font-family: "Single Day", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+#fs1{
+    font-size: 20pt;
+}
+#fs2{
+    font-size: 16px;
+}
+#fs3{
+    font-size: 2em;
+}
+#fs4{
+    font-size: 0.5rem;
+}
+#fs5{
+    font-size: 150%;
+}
+#fw1{
+    font-weight: 900;
+    /* font-weight: bold; */
+}
+#fw2{
+    font-weight: lighter;
+}
+#fstyle{
+    /* font-style: italic; */
+    font-style: oblique;
+}
+.fw100{ font-weight: 100;}
+.fw300{ font-weight: 300;}
+.fw500{ font-weight: 500;}
+
+.w2{ width: 200px;}
+.w5{ width: 500px;}
+.w7{ width: 700px;}
+
+div{border: 1px solid black;}
+
+#c-name{
+    /* 색상명으로 지정 */
+    color: aqua;
+}
+
+#c-16{
+    /* 
+    #과 16진수 6자리를 합쳐서 색상을 표현
+    앞에서 부터 2자리씩 묶어 빨강, 초록, 파랑 색상의 양을 표시
+    (중복된 숫자인경우 3자리로 표현 가능 #000000 -> #000)
+    */
+    color: #000;
+}
+
+#c-rgb{
+    /*
+    빨강 초록 파랑의 양을 0~255까지의 수로 표현
+    */
+    color: rgb(255, 0, 0);
+}
+
+#c-rgba{
+    /* a : 투명도(0~1)
+    0:투명, 1불투명 */
+    color: rgba(0,0,255,0.1);
+    text-decoration: none;
+}
+
+.underline{
+    text-decoration: underline;
+}
+.overline{
+    text-decoration: overline;
+}
+.line-throught{
+    text-decoration: line-through;
+}
+a{
+    text-decoration: none;
+    color: #666;
+    font-size: 1.5em;
+}

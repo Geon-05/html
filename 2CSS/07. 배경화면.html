@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경화면</title>
+
+    <style>
+        .div{
+            border: 20px dotted black;
+            width: 500px;
+            height: 300px;
+            /* 배경화면 이미지 경로 */
+            background-image: url(images/bg1.png);
+            /* no-repeat - 배경화면 반복 제거 
+            repeat-x - 가로만 반복
+            repeat-y - 세로만 반복
+            repeat - 가로 세로 반복 (기본) */
+            background-repeat: no-repeat;
+            /* contain : 가로나 세로에 꽉 차게 보여줌 
+            cover : 화면을 꽉 채워서 보여줌 - 이미지 짤림이 발생 할 수 있다
+            auto : 원본 사이즈 (기본)*/
+            /* background-size: auto; */
+            background-size: cover;
+            /* 가로위치 세로위치
+            right, left, center
+            top, midum, center
+            */
+            /* background-position: center center; */
+            /* background-position: 30px 20px; */
+            /* 배경화면을 어디까지 보여줄지 
+            테두리까지 보여줄것인지
+            , 패딩까지 보여줄것인지
+            , 컨텐츠 영역만 보여줄것인지 */
+            background-origin: border-box;
+        }
+
+        div{
+            border: 3px dotted #333;
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+        }
+        div{
+            background-image: url(images/bg4.jpg)
+        }
+        .box1{background-size: auto;}
+        .box2{background-size: 200px;/*가로너비를 지정, 세로는 자동 계산*/
+                background-repeat: no-repeat;/*자리가 남으면 반복*/}
+        .box3{background-size: 50%;/*요소 너비의 50%*/}
+        .box4{background-size: contain;/*가로/세로에 맞게 보여줍니다*/}
+        .box5{background-size: cover;/*이미지가 작은경우 늘려서 보여줌*/}
+    </style>
+</head>
+<body>
+    div.box$*6 <br>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6"></div>
+    
+
+    <br><br><br><br><br><br><br>
+</body>
+</html>

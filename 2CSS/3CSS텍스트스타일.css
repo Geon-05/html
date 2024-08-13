@@ -1,0 +1,102 @@
+.ff1{
+    font-family: 궁서체;
+}
+.ff2{
+    font-family: 굴림체;
+}
+#fs1{
+    font-size: 20px;
+}
+#fs2{
+    font-size: 2em;
+}
+#fs3{
+    font-size: 2rem;
+}
+#fw1{
+    /* 단위가 없음!! */
+    font-weight: 900;
+}
+#fw2{
+    font-weight: lighter;
+}
+.fstyle{
+    font-style: oblique;
+}
+
+#c-name{
+    color: black;
+}
+
+#c-16{
+    /*#과 16진수 6자리를 합쳐서 색상을 표현
+    2자리씩 묶어서 빨강, 초록, 파랑 색상의 양을 표시
+    (중복된 수는 3자리로 표현가능>)*/
+    color: #000000;
+    color: #000;
+}
+#c-rgb{
+    /* 빨강 초록 파랑의 양을 0~255까지의 숫자로 표현 */
+    color:rgb(255, 100, 0);
+}
+#c-rgba{
+    /* a : 투명도(0~1)
+    0:투명, 1:불투명*/
+    color: rgba(0, 0, 255, 0.5);
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+.center{
+    text-align: center;
+}
+
+.left{
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+}
+
+.lineheight{
+    /* 요소의 테두리 지정 */
+    border: 1px solid black;
+
+    /* 세로중앙정렬 - 한줄일때만 가능 */
+    height: 100px;
+    line-height: 100px;
+    /* 글자 가운데 정렬 */
+    text-align: center;
+    /* 요소의 크기 지정 */
+    width: 400px;
+    /* 블럭 형식인 경우 margin을 auto로 주어
+       가운데 정렬 가능 */
+    margin: auto;
+}
+
+.shadow1{
+    /* 그림자 효과
+       가로, 세로, 번짐정도, 색상
+    */
+    text-shadow: 5px 5px 5px #aaa;
+    font-size: 2rem;
+}
+
+.shadow2{
+    /* 음수 : 왼쪽 위쪽 */
+    text-shadow: -5px -5px 2px red;
+}
+
+.shadow3{
+    text-shadow: 7px -7px 20px #000;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.spacing{
+    letter-spacing: 0.5rem;
+}
