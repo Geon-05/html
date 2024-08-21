@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>프런트엔드 개발자 지원서</title>
+    <style>
+      #container {
+        width: 520px;
+        border: 1px solid black;
+        padding: 20px 40px;
+        margin: 0 auto;
+      }
+      fieldset {
+        margin-bottom: 15px;
+      }
+      legend {
+        font-weight: bold;
+      }
+      ul {
+        list-style-type: none;
+      }
+      li {
+        line-height: 30px;
+      }
+      /* CSS 주석 */
+      /* 
+      박스 - 영역을 잡을 때 사용
+      블럭요소 (한 줄을 모두 차지하는 요소)
+      */
+      .div {
+        border: 1px solid red;
+        /* 컨텐츠가 없는 경우 높이가 0 */
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+      }
+      /* 
+      인라인요소 - 컨텐츠의 영역 만큼 자리를 차지
+       */
+       span {
+        font-weight: 900;
+        color: red;
+       }
+    </style>
+  </head>
+  <body>
+    <!-- HTML 주석 -->
+    <div class="div">
+      데이터
+      <!-- <div>
+        상자2
+        <div>
+          상자3
+        </div>
+      </div> -->
+    </div>
+    오늘 날짜는 <span>데이터</span> 입니다.
+    오늘 날짜는 <div>데이터</div> 입니다.
+    <div id="container">
+      프런트엔드 개발자 지원서
+      <form action=""></form>
+    </div>
+  </body>
+</html>

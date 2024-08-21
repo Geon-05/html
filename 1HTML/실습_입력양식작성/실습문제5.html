@@ -1,49 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-<head>
-	<meta charset="utf-8">
-	<title>예약 접수</title>
-	<style>
-		input{
-			width: 200px
-		}
-		label {
-			width: 80px
-		}
-		ul {
-			list-style:none;
-		}
-		li {
-			line-height:50px;
-		}
-		label {
-			width:60px;
-			float:left;
-		}
-	</style>
-</head>
-<body>
-	<form action="book">
-<h1>예약 정보</h1>
-	<ul type=none>
+  <head>
+    <meta charset="utf-8" />
+    <title>예약 접수</title>
+    <style>
+      label {
+        width: 80px;
+      }
+      ul {
+        list-style: none;
+      }
+      li {
+        line-height: 50px;
+      }
+      label {
+		text-align: left;
+        width: 80px;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="book">
+      <h1>예약 정보</h1>
+	  hint. 목록태그를 이용하면 들여쓰기가 가능 합니다.
+	  <!-- form 시작태그와 끝태그 사이에 있는 요소들을 서버로 전달
+	   name속성이 정의된 항목만 전달(name 속성이 없는경우 전달되지 않음) -->
+	  <form action="">
+		   <!-- ?name=&phone=&email= -->
+      <ul>
 		<li>
+			<!-- for="연결하려는 요소의 아이디 값"
+			 	 : 라벨을 선택 했을때 요소가 선택됨
+				 name : 서버에 전달될 이름
+				 value : 서버에 전달될 값
+				 queryString(쿼리스트링) : 주소?name속성의값=value속성의값
+				 checkbox, radio 의 경우 선택된(checked속성이 있는) 요소의 값이 서버에 전달
+				 -->
 			<label for="name">이름</label>
-			<input type="text" id="name">
-		</li>
+			<input type="text" name="name" id="name" value="user01"></li>
 		<li>
 			<label for="phone">휴대폰</label>
-			<input type="text" id="phone">
+			<input type="text" name="phone" id="phone" placeholder="010-123-1234"></li>
+		<li>
+			<label for="email">이메일</label>
+			<input type="email" name="email" id="email"></li>
+		<li>
+			<label for="serch">검색</label>
+			<input type="search" name="serch" id="serch"></li>
+		<li>
+			<label for="pw">비밀번호</label>
+			<input type="password" name="pw" id="pw"></li>
+		<li>
+			<label for="">취미</label>
+			<!-- checkbox는 name으로 묶여짐 -->
+			<input type="checkbox" name="hobby" id="" value="a">축구
+			<input type="checkbox" name="hobby" id="" value="b">야구
+			<input type="checkbox" name="hobby" id="" value="c">배구
+			<input type="checkbox" name="hobby" id="" value="d">농구
 		</li>
 		<li>
-			<label for="mail">이메일</label>
-			<input type="text" id="mail">
+			<label for="">성별</label>
+			<input type="radio" name="gender" id="mm" value="m">남
+			<input type="radio" name="gender" id="ff" value="f">여
 		</li>
-		<li>
-			<button type="button">예약하기</button>
-		</li>
-
-	</form>
-	
-	</ul>
-</body>
+		<li><button>예약하기</button></li>
+	  </ul>
+    </form>
+  </body>
 </html>
