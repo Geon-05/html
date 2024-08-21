@@ -9,10 +9,14 @@
         height: 600px;
         border: 1px solid black;
         padding: 20px 40px;
+        /* 가운데 정렬 - 박스의 너비가 지정된경우 */
         margin: 0 auto;
       }
       fieldset {
+        padding: 0px;
         margin-bottom: 15px;
+        border: 0px;
+        margin: 0px;
       }
       legend {
         font-weight: bold;
@@ -23,53 +27,64 @@
       li {
         line-height: 30px;
       }
-      textarea {
-        width: 400px;
-        height: 100px;
+      p {
+        font-weight: 800;
       }
     </style>
   </head>
   <body>
     <div id="container">
       <h1>프런트엔드 개발자 지원서</h1>
-      <p>
-        HTML. CSS, Javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.
-      </p>
+      HTML. CSS, Javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.
       <hr />
-
       <form>
-        <h4>개인정보</h4>
+        <p>개인정보</p>
         <ul>
           <li>
-<label for="name">이름</label>
-        <input type="text" id="name" /> <br />
+            <label for="name">이름</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="공백없이 입력하세요"
+            />
           </li>
           <li>
-<label for="phone">연락처</label>
-        <input type="text" id="phone" />
+            <label for="phone">연락처</label>
+            <input type="text" name="phone" id="phone" />
           </li>
         </ul>
 
-        <h4>지원 분야</h4>
+        <p>지원분야</p>
         <ul>
           <li>
-            <input type="radio" id="web_pub" name="support" />
-            <label for="web_pub">웹 퍼블리싱</label>
+            <input type="radio" name="type" id="" value="pub" /> 웹 퍼블리싱
           </li>
           <li>
-            <input type="radio" id="web_app" name="support" />
-            <label for="web_app">웹 애플리케이션 개발</label>
+            <input type="radio" name="type" id="" value="dev" /> 웹 애플리케이션
+            개발
           </li>
           <li>
-            <input type="radio" id="dev_environment" name="support" />
-            <label for="dev_environment">개발 환경 개선</label>
+            <input type="radio" name="type" id="" value="conf" /> 개발 환경 개선
           </li>
         </ul>
-        <h4>지원 동기</h4>
-        <textarea name="reason" id=""></textarea>
-        <br>
-        <input type="button" value="접수하기">
-        <input type="button" value="다시쓰기">
+
+        <p>지원동기</p>
+        <ul>
+          <li>
+            <textarea
+              name=""
+              id=""
+              rows="5"
+              cols="50"
+              placeholder="본사 지원 동기를 간략히 써 주세요."
+            ></textarea>
+          </li>
+        </ul>
+        <p>
+          <button type="submit">접수하기</button>
+          <button type="reset">다시 쓰기</button>
+        </p>
       </form>
     </div>
   </body>

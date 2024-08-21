@@ -19,65 +19,36 @@
   <body>
     <h1>주문하기</h1>
     <form action="">
-      <li>
-        <label for="name">고객명 : </label>
-        <input type="text" name="" id="name" />
-      </li>
-      <li>
-        <label for="phone">전화번호 : </label>
-        <input type="text" name="" id="phone" />
-      </li>
-      <li>
-        <label for="mail">E-mail : </label>
-        <input type="text" name="" id="mail" />
-      </li>
+      <p>
+        <label for="">고객명 :</label>
+        <input type="text" name="" id="">
+      </p>
+      <p>
+        <label for="">전화번호 :</label>
+        <input type="text" name="" id="">
+      </p>
+      <p>
+        <label for="">E-mail :</label>
+        <input type="email" name="" id="">
+      </p>
 
       <fieldset>
         <legend>피자 사이즈</legend>
-        <li>
-          <input type="radio" name="size" id="Small" />
-          <label for="Small">Small</label>
-        </li>
-        <li>
-          <input type="radio" name="size" id="Medium" />
-          <label for="Medium">Medium</label>
-        </li>
-        <li>
-          <input type="radio" name="size" id="Large" />
-          <label for="Large">Large</label>
-        </li>
+        <p><input type="radio" name="size" id="s_s"> <label for="s_s">Small</label></p>
+        <p><input type="radio" name="size" id="s_m"> <label for="s_m">Medium</label></p>
+        <p><input type="radio" name="size" id="s_l"> <label for="s_l">Large</label></p>
       </fieldset>
-
       <fieldset>
         <legend>토핑 선택</legend>
-        <li>
-          <input type="checkbox" name="topping" id="bacon" />
-          <label for="bacon">베이컨</label>
-        </li>
-        <li>
-          <input type="checkbox" name="topping" id="cheese" />
-          <label for="cheese">치즈</label>
-        </li>
-        <li>
-          <input type="checkbox" name="topping" id="onion" />
-          <label for="onion">양파</label>
-        </li>
-        <li>
-          <input type="checkbox" name="topping" id="mushroom" />
-          <label for="mushroom">버섯</label>
-        </li>
+        <p><input type="checkbox" name="topping" id="t_b"><label for="t_b">베이컨</label></p>
+        <p><input type="checkbox" name="topping" id="t_c"><label for="t_c">치즈</label></p>
+        <p><input type="checkbox" name="topping" id="t_o"><label for="t_o">양파</label></p>
+        <p><input type="checkbox" name="topping" id="t_m"><label for="t_m">버섯</label></p>
       </fieldset>
-      <li>
-        <label for="date">희망 배송 시간 : </label>
-        <input type="date" name="" id="date" />
-      </li>
-      <li>
-        <label for="requested">배송 시 요청사항 : </label>
-        <textarea name="" id="requested"></textarea>
-      </li>
-      <li>
-        <input type="button" value="주문하기" />
-      </li>
+      <p><label for="date">희망 배송 시간 : </label><input type="date" name="" id="date"></p>
+      <p><label for="text">배송 시 요청사항 : </label> <textarea name="" id="text" rows="2" cols="50"></textarea></p>
+      <p><button type="submit">주문하기</button></p>
+      
     </form>
   </body>
 </html>
