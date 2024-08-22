@@ -14,106 +14,121 @@
         line-height: 50px;
       }
       label {
-		text-align: left;
+        text-align: left;
         width: 80px;
         float: left;
       }
     </style>
   </head>
   <body>
-      <h1>예약 정보</h1>
-	  hint. 목록태그를 이용하면 들여쓰기가 가능 합니다.
-	  <!-- form 시작태그와 끝태그 사이에 있는 요소들을 서버로 전달
+    <h1>예약 정보</h1>
+    hint. 목록태그를 이용하면 들여쓰기가 가능 합니다.
+    <!-- form 시작태그와 끝태그 사이에 있는 요소들을 서버로 전달
 	   name속성이 정의된 항목만 전달(name 속성이 없는경우 전달되지 않음) -->
-	  <form name="registerForm">
-		   <!-- ?name=&phone=&email= -->
+    <form name="registerForm">
+      <!-- ?name=&phone=&email= -->
       <ul>
-		<li>
-			<!-- for="연결하려는 요소의 아이디 값"
+        <li>
+          <!-- for="연결하려는 요소의 아이디 값"
 			 	 : 라벨을 선택 했을때 요소가 선택됨
 				 name : 서버에 전달될 이름
 				 value : 서버에 전달될 값
 				 queryString(쿼리스트링) : 주소?name속성의값=value속성의값
 				 checkbox, radio 의 경우 선택된(checked속성이 있는) 요소의 값이 서버에 전달
 				 -->
-			<label for="name">이름</label>
-			<input type="text" name="name" id="name" value="user01"></li>
-		<li>
-			<label for="phone">휴대폰</label>
-			<input type="text" name="phone" placeholder="010-123-1234"></li>
-		<li>
-			<label for="email">이메일</label>
-			<input type="email" name="email" ></li>
-		<li>
-			<label for="serch">검색</label>
-			<input type="search" name="serch" ></li>
-		<li>
-			<label for="pw">비밀번호</label>
-			<input type="password" name="pw" ></li>
-		<li>
-			<label for="">취미</label>
-			<!-- checkbox는 name으로 묶여짐 -->
-			<input type="checkbox" name="hobby" value="a">축구
-			<input type="checkbox" name="hobby" value="b">야구
-			<input type="checkbox" name="hobby" value="c">배구
-			<input type="checkbox" name="hobby" value="d">농구
-		</li>
-		<li>
-			<label for="">성별</label>
-			<input type="radio" name="gender" value="m">남
-			<input type="radio" name="gender" value="f">여
-		</li>
-		<li>
-			<label for="">국적</label>
-			<select id="select" name="nat">
-				<option value=null>========선택========</option>
-				<option value="ko">한국</option>
-				<option value="us">미국</option>
-				<option value="jp">일본</option>
-				<option value="ch">중국</option>
-			</select>
-		</li>
-		<li><button type="button" id="btn">예약하기</button></li>
-	  </ul>
-	  <script>
-		// javascript작성시 항상 개발자 도구의 console탭을 열어놓고 확인하는 습관을 갖는다
-		btn.addEventListener('click', function(){
-			let name = document.querySelector('#name').value;
-			if(name.length == 0){
-				alert('이름을 입력해주세요.')
-				return;
-			}
-			// 이메일, 전화번호등 일정 패턴을 입력해야하는경우
-			// 정규식을 이용한 처리가 가능하다
-			let hobby = document.querySelector('[name=hobby]:checked');
-			if(hobby == null){
-				alert('취미를 선택 해주세요.')
-				return;
-			} else {
-				// 취미는 3개까지 선택 가능합니다
-				// 3개를 초과하는 경우 메세지 처리를 하세요
-				let hobbys = document.querySelectorAll("[name=hobby]:checked");
-				if(hobbys.length>3){
-					alert('취미는 최대 3개까지 선택가능합니다.');
-					return;
-				}
-			}
+          <label for="name">이름</label>
+          <input type="text" name="name" id="name" value="user01" />
+        </li>
+        <li>
+          <label for="phone">휴대폰</label>
+          <input type="text" name="phone" id="phone" placeholder="010-123-1234" />
+        </li>
+        <li>
+          <label for="email">이메일</label>
+          <input type="email" name="email" id="email" />
+        </li>
+        <li>
+          <label for="pw">비밀번호</label>
+          <input type="password" name="pw" id="pw"/>
+        </li>
+        <li>
+          <label>취미</label>
+          <!-- checkbox는 name으로 묶여짐 -->
+          <input type="checkbox" name="hobby" value="a" />축구
+          <input type="checkbox" name="hobby" value="b" />야구
+          <input type="checkbox" name="hobby" value="c" />배구
+          <input type="checkbox" name="hobby" value="d" />농구
+        </li>
+        <li>
+          <label for="">성별</label>
+          <input type="radio" name="gender" value="m" />남
+          <input type="radio" name="gender" value="f" />여
+        </li>
+        <li>
+          <label for="">국적</label>
+          <select id="select" name="nat">
+            <option value="null">========선택========</option>
+            <option value="ko">한국</option>
+            <option value="us">미국</option>
+            <option value="jp">일본</option>
+            <option value="ch">중국</option>
+          </select>
+        </li>
+        <li><button type="button" id="btn">예약하기</button></li>
+      </ul>
+      <script>
+        // javascript작성시 항상 개발자 도구의 console탭을 열어놓고 확인하는 습관을 갖는다
+        btn.addEventListener("click", function () {
+          let name = document.querySelector("#name").value;
+          if (name.length == 0) {
+            alert("이름을 입력해주세요.");
+            return;
+          }
+          let phone = document.querySelector("#phone").value;
+          if (phone.length == 0) {
+            alert("전화번호를 입력해주세요.");
+            return;
+          }
+		  let email = document.querySelector('#email').value;
+		  if (email.length == 0){
+			alert("이메일을 입력해주세요.");
+			return;
+		  }
+		  let pw = document.querySelector('#pw').value;
+		  if (pw.length == 0) {
+			alert("비밀번호를 입력해주세요.");
+			return;
+		  }
+          // 이메일, 전화번호등 일정 패턴을 입력해야하는경우
+          // 정규식을 이용한 처리가 가능하다
+          let hobby = document.querySelector("[name=hobby]:checked");
+          if (hobby == null) {
+            alert("취미를 선택 해주세요.");
+            return;
+          } else {
+            // 취미는 3개까지 선택 가능합니다
+            // 3개를 초과하는 경우 메세지 처리를 하세요
+            let hobbys = document.querySelectorAll("[name=hobby]:checked");
+            if (hobbys.length > 3) {
+              alert("취미는 최대 3개까지 선택가능합니다.");
+              return;
+            }
+          }
 
-			// 국적이 선택되어 있지 않으면 메세지 처리
-			// select.selectedIndex : 선택된 인덱스 번호
-			// select.option : 요소의 option 목록
-			// select박스의 선택된 옵션 요소의 value값
-			let selected = select.options[select.selectedIndex].value;
-			if(selected == 'null'){
-				alert('국적을 선택하세요.')
-			}
-			// 폼전송 - 폼을 선택(폼은 이름으로 선택 할 수 있다.)
-			// 폼이름.submit(); : 서버에 데이터를 가지고 요청
-			registerForm.submit();
-		})
-
-
-	  </script>
+          // 국적이 선택되어 있지 않으면 메세지 처리
+          // select.selectedIndex : 선택된 인덱스 번호
+          // select.option : 요소의 option 목록
+          // select박스의 선택된 옵션 요소의 value값
+          let selected = select.options[select.selectedIndex].value;
+          if (selected == "null") {
+            alert("국적을 선택하세요.");
+            return;
+          }
+          // 폼전송 - 폼을 선택(폼은 이름으로 선택 할 수 있다.)
+          // 폼이름.submit(); : 서버에 데이터를 가지고 요청
+          registerForm.submit();
+        });
+      </script>
     </form>
   </body>
 </html>
