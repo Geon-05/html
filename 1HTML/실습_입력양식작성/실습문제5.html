@@ -54,8 +54,8 @@
 		<li>
 			<label for="">취미</label>
 			<!-- checkbox는 name으로 묶여짐 -->
-			<input type="checkbox" name="hobby" id="" value="a">축구
-			<input type="checkbox" name="hobby" id="" value="b">야구
+			<input type="checkbox" name="hobby" id="ha" value="a">축구
+			<input type="checkbox" name="hobby" id="hb" value="b">야구
 			<input type="checkbox" name="hobby" id="" value="c">배구
 			<input type="checkbox" name="hobby" id="" value="d">농구
 		</li>
@@ -64,8 +64,28 @@
 			<input type="radio" name="gender" id="mm" value="m">남
 			<input type="radio" name="gender" id="ff" value="f">여
 		</li>
-		<li><button>예약하기</button></li>
+		<li><button type="button" id="btn1">예약하기</button></li>
 	  </ul>
+	  <script>
+		btn1.addEventListener('click',function(){
+			let name = document.querySelector("#name");
+			let phone = document.querySelector("#phone");
+			let email = document.querySelector("#email");
+			let serch = document.querySelector("#serch");
+			let pw = document.querySelector("#pw");
+			let hobby = document.querySelectorAll("[name=hobby]");
+			let gender = document.querySelectorAll("[name=gender]");
+	
+			if(name.value.length == 0
+				|| phone.value.length == 0
+			){
+				alert("이름을 입력하세요.")
+			}
+
+		})
+
+
+	  </script>
     </form>
   </body>
 </html>

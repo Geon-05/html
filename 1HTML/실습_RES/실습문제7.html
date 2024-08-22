@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>주문하기</h1>
-    <form>
+    <form name="orderForm">
         <p>
             <label for='name'>고객명 : 
                 <input type="text" name="name" id="name" autofocus required></label>
@@ -26,29 +26,65 @@
             <input type="radio" name="size" id="size_s" value='s'>
             <!-- 라벨을 붙여주어 라벨이 선택 되어도 
                 요소가 선택 된것과 같은 효과를 줄 수 있다-->
-            <label for='size_s'>Small</label>
-            <br><input type="radio" name="size" id="size_m" value='m'>
-            <label for='size_m'>Midium</label>
+            <label for='size_s'>Small(15000원)</label>
+            <br><input type="radio" name="size" id="size_m" value='m' onchange=setPrice()>
+            <label for='size_m'>Midium(20000원)</label>
             <br><input type="radio" name="size" id="size_l" value='l' checked>
-            <label for="size_l">Large</label> 
+            <label for="size_l">Large(25000원)</label> 
         </fieldset>
         <fieldset>
             <legend>토핑 선택</legend>
-            <input type="checkbox" name="topping" id="bacon">
-            <label for='bacon'>베이컨</label>
-            <br><input type="checkbox" name="topping" id="cheese">
-            <label for='cheese'>치즈</label>
-            <br><input type="checkbox" name="topping" id="onion">
-            <label for='onion'>양파</label>
-            <br><input type="checkbox" name="topping" id="mushroom">
-            <label for='mushroom'>버섯</label>
+            <input type="checkbox" name="topping" id="bacon" value="b">
+            <label for='bacon'>베이컨(+2000원)</label>
+            <br><input type="checkbox" name="topping" id="cheese" value="c">
+            <label for='cheese'>치즈(+1000원)</label>
+            <br><input type="checkbox" name="topping" id="onion" value="o">
+            <label for='onion'>양파(+500원)</label>
+            <br><input type="checkbox" name="topping" id="mushroom" value="m">
+            <label for='mushroom'>버섯(+1000원)</label>
         </fieldset>
-        <p>희망 배송 일 : <input type="date" name="" id="" required></p>
+        <p>희망 배송 일 : <input type="date" name="" id="time" required></p>
         <p>희망 배송 시간 : <input type="time" name="" id="" required></p>
+        <input type="datetime-local" name="" id="">
         <p>배송시 요청사항 : 
         <textarea rows=3></textarea>
         </p>
-        <br><input type="submit" value="주문하기">
+        <p>주문금액 <input type="text" id="price" value="25000"></p>
+        <br><input type="button" value="주문하기" id="btn">
+        <script>
+            btn.addEventListener('click', function(){
+                alert('test');
+
+
+                let time = document.querySelector('[type=time]').value;
+                console.log("배달시간",time);
+                console.log("배달시간 : "+time);
+                console.log(`배달시간 ${time}`);
+
+                if (time == '') {
+                    alert("배달시간을 선택 해주세요")
+                    return;
+                }
+                if (time.substr(0,2) >=22) {
+                    alert("배달 마감시간은 오후 10시까지 가능합니다.")
+                    return;
+                }
+
+                let name = document.querySelector('#name').value;
+                let tel = document.querySelector('#tel').value;
+                let email = document.querySelector('#email').value;
+                let size = document.querySelector('[name=size]:checked').value;
+
+                orderForm.submit();
+            })
+
+            function setPrice(){
+                alert('가격계산')
+                if (condition) {
+                    
+                }
+            }
+        </script>
     </form>
 
 </body>

@@ -25,21 +25,82 @@
 			<form>
 				<h4>개인정보</h4>
 				<ul>
-					<li>이름<input type='text' name='name' placeholder='공백 없이 입력 하세요.'></li>
-					<li>연락처<input type='tel' name='phone'></li>
+					<li>이름<input type='text' name='name' id="name" placeholder='공백 없이 입력 하세요.'></li>
+					<li>연락처<input type='tel' name='phone' id="phone"></li>
 				</ul>
 				<h4>지원분야</h4>
 				<ul>
-					<li><input type="radio" name='field' value='pb'>웹 퍼블리싱</li>
-					<li><input type="radio" name='field' value='pp'>웹 어플리케이션 개발</li>
-					<li><input type="radio" name='field' value='pc'>개발 환경 개선</li>
+					<li><input type="radio" name='type' value='pb'>웹 퍼블리싱</li>
+					<li><input type="radio" name='type' value='pp'>웹 어플리케이션 개발</li>
+					<li><input type="radio" name='type' value='pc'>개발 환경 개선</li>
 
 				</ul>
 				<h4>지원동기</h4>
 				<textarea id='motive' name='motive' cols='60' rows='5' placeholder='본사 지원 동기를 간략히 써 주세요.'></textarea>
+				<br>
+				<button id="btn1">접수하기</button>
+				<button type="button" id="btn2">다시쓰기</button>
+				<button type="button" id="btn3">접수하기2</button>
+				<script>
+					// T
+					let btn3 = document.querySelector('#btn3');
+					btn3.addEventListener('click',function(){
+						console.log("버튼클릭 - 함수실행");
+						let name = document.querySelector("#name");
+						// 이름이 입력되었는지 확인
+						if (name.value.length == 0) {
+							alert("이름을 입력해주세요.");
+						}
+						
+						// 지원분야가 입력되었는지 확인 - 추후
+						// input태그 중에서 name 속성이 type이고 checked상태인 요소를 선택
+						// 만약 체크된 요소가 없다면 null을 반환
+						let type = document.querySelector('input[name=type]:checked');
+						if(type==null){
+							alert("지원분야를 선택해주세요.");
+						}
 
-				<input type="submit" value="접수하기">
-				<input type="reset" value="다시쓰기">
+						// 연락처가 입력되었는지 확인
+
+
+						// 지원동기가 입력되었는지 확인
+					})
+
+					// 연습용
+					let btn1 = document.querySelector('#btn1');
+					let btn2 = document.querySelector('#btn2');
+					let motive = document.querySelector('motive');
+
+
+					btn1.addEventListener('click', function(){
+						let name = document.querySelector("#name");
+						let phone = document.querySelector("#phone");
+						let motive = document.querySelector("#motive");
+						
+						if (name.value.length == 0) {
+							alert("이름을 입력하세요.")
+						}
+						if (phone.value.length == 0) {
+							alert("전화번호를 입력하세요.")
+						}
+						if (document.querySelector("input[name=type]:checked") == null){
+							alert("지원분야를 선택하세요.")
+						}
+						if (motive.value.length == 0) {
+							alert("지원동기를 입력하세요.")
+						}
+					})
+					
+					btn2.addEventListener('click', function(){
+						let res = confirm('정말 다시쓰시겠습니까?');
+						if(res){
+							alert("초기화");
+						} else {
+							alert(res);
+							btn2.removeEventListener()
+						}
+					})
+				</script>
 			</form>
 		</div>
   </body>
