@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 개요</title>
+  </head>
+  <body>
+    <h2>자바스크립트 개요</h2>
+    <h3>1. 자바스크립트</h3>
+    <h4>inline 방식</h4>
+    <p>태그에 직접 작성하는 방식</p>
+    <p>자바스크립트 소스가 몇 줄 안되는 경우 또는 함수를 호출 하고 싶은 경우</p>
+    <button onclick="alert('반갑습니다.')" style="color: red; font-weight: 800">
+      버튼
+    </button>
+
+    <h4>internal 방식</h4>
+    <p>html 내부(script)에 지정하는 방식 / style...</p>
+    <p>만약 요소를 참조하고싶다면 script는 그 요소 아래에 작성한다</p>
+
+    <button id="btn">버튼 - 내부스크립트</button>
+    <button id="btn2">버튼 2</button>
+    <!-- 익명의 함수를 이용 -->
+    <button id="btn3">버튼 3 - 함수실습</button>
+    <button id="btn4">버튼 4 - 함수실습</button>
+    <button id="btn5">버튼 5 - 함수실습</button>
+    <!-- 함수를 만들고 버튼을 클릭했을때 함수를 실행하세요
+     fn_btn6_click(){} -->
+    <button id="btn6">버튼 6 - 함수실습</button>
+
+    <button id="btn7">버튼 7 - 함수실습</button>
+
+    <!-- addEventListener -->
+    <button id="btn8">addEventListener</button>
+    <script>
+      // 아이디로 요소에 접근 할 수 있다!
+      // alert(btn);
+      // 만약 아이디와 같은 이름의 변수를 선언하게 되면 더이상 사용 할 수 없다.
+      let btn = document.querySelector("#btn");
+
+      let btn2 = document.querySelector("#btn2");
+
+      let btn3 = document.querySelector("#btn3");
+
+      let btn4 = document.querySelector("#btn4");
+      
+      let btn5 = document.querySelector("#btn5");
+
+      let btn6 = document.querySelector("#btn6");
+
+      let btn7 = document.querySelector("#btn7");
+
+      let btn8 = document.querySelector("#btn8");
+    //   addEventListener를 이용해서 이벤트를 정의
+    // addEventListener(이벤트이름,실행할 함수)
+      btn8.addEventListener('click',function(){
+        alert('addEventListener를 이용한 이벤트 처리')
+      })
+      // 버튼에 onclick 이벤트를 추가
+      // 익명의 함수를 이용
+      btn.onclick = function () {
+        console.log("info", "btn 버튼을 클릭 했습니다.");
+        // 사용자가 확인버튼을 누를때까지 화면을 잠시 멈추고 대기
+        alert("반갑습니다.");
+      };
+
+      btn2.onclick = function () {
+          alert("확인확인!");
+          console.log("두번째 btn");
+      };
+
+    // function 함수이름(){}
+    // 함수의 호이스팅
+    // 함수는 어디서든지 실행이 가능하다!
+      function fn_btn3_click(){
+        console.log('버튼3의 함수');
+      }
+
+      btn3.onclick = function (){
+        fn_btn3_click();
+      }
+
+      function fn_btn5_click(msg){
+        console.log('버튼5의 함수');
+        alert(msg);
+      }
+
+      btn5.onclick = function (){
+        fn_btn5_click('버튼5확인용!');
+      }
+
+    // 함수의 이름을 넣어서 전달 할 수 있다
+    // ()를 붙이면 바로 실행되어 진다
+      btn4.onclick = fn_btn3_click;
+
+      function fn_btn6_click(){
+        alert('매개변수가 없는 함수');
+      }
+
+      function fn_btn6_click(msg){
+        alert('매개변수가 있는 함수 :' + msg);
+      }
+
+      btn6.onclick = function(){
+          fn_btn6_click();
+          fn_btn6_click('안녕하세요.');
+      }
+
+      btn7.onclick = fn_btn7_click;
+
+      function fn_btn7_click(){
+        console.log('버튼2의 함수');
+      }
+
+    </script>
+    <h4>external 방식</h4>
+    <p>html 외부에 지정하는 방식 / css...</p>
+    <script src="js/external.js"></script>
+    <button id="btn9">외부파일의 함수를 호출</button>
+    <script>
+        let btn9 = document.querySelector('#btn9');
+        btn9.addEventListener('click',fn_btn9_click);
+        // 함수이름뒤에 괄호가 붙으면 바로실행
+    </script>
+  </body>
+</html>
