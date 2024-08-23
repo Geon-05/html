@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 40px;
+            height: 40px;
+            font-size: x-large;
+        }
+    </style>
+    <script>
+        // 두 수를 매개변수로 받아서 두수의 합을 반환 하는 함수
+        function fn1(num1, num2){
+            console.log(num1);
+            console.log(num2);
+            return parseInt(num1) + parseInt(num2);
+        }
+        
+        window.addEventListener('load', function(){
+            box_res.innerHTML=fn1(1,2);
+
+            btn1.addEventListener('click',function(){
+                res.value = parseInt(input_num1.value) + parseInt(input_num2.value);
+                
+            })
+            
+        })
+    </script>
+</head>
+<body>
+    두수의 합은? <div id="box_res"></div>
+    <input type="text" name="" id="input_num1">
+    +<input type="text" name="" id="input_num2">
+    <button type="button" id="btn1">=</button>
+    <input type="text" name="" id="res">
+
+    <hr>
+    <input type="number" name="" id="" min="0" max="100">
+</body>
+</html>

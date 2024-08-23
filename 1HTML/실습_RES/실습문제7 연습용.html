@@ -24,8 +24,6 @@
         <fieldset>
             <legend>피자 사이즈</legend>
             <input type="radio" name="size" id="size_s" value='s'>
-            <!-- 라벨을 붙여주어 라벨이 선택 되어도 
-                요소가 선택 된것과 같은 효과를 줄 수 있다-->
             <label for='size_s'>Small(15000원)</label>
             <br><input type="radio" name="size" id="size_m" value='m' onchange=setPrice()>
             <label for='size_m'>Midium(20000원)</label>
@@ -43,35 +41,73 @@
             <br><input type="checkbox" name="topping" id="mushroom" value="m">
             <label for='mushroom'>버섯(+1000원)</label>
         </fieldset>
-        <p>희망 배송 일 : <input type="date" name="" id="time" required></p>
-        <p>희망 배송 시간 : <input type="time" name="" id="" required></p>
-        <input type="datetime-local" name="" id="">
+        <p>희망 배송 일 : <input type="date" name="date" id="date" required></p>
+        <p>희망 배송 시간 : <input type="time" name="time" id="time" required></p>
+        <p>기능구현X<input type="datetime-local" name="" id=""></p>
         <p>배송시 요청사항 : 
-        <textarea rows=3></textarea>
+        <textarea rows=3 name="request" id="request"></textarea>
         </p>
-        <p>주문금액 <input type="text" id="price" value="25000"></p>
+        <p>주문금액 <input type="text" id="price"></p>
         <br><button type="button" id="btn">주문하기</button>
 
         <script>
+            document.querySelector('#price').value = 0;
+            document.addEventListener('change',function(){
+                let price = 0;
+                if(document.querySelector('[name=size]:checked').value)
+            })
+
             btn.addEventListener('click',function(){
-                let name = document.querySelector('#name').value;
-                let tel = document.querySelector('#tel').value;
-                let email = document.querySelector('#email').value;
+                let name = document.querySelector('#name');
+                let tel = document.querySelector('#tel');
+                let email = document.querySelector('#email');
+                let sizeChecked = document.querySelectorAll('[name=size]:checked');
+                let toppingChecked = document.querySelectorAll('[name=topping]:checked');
+                let date = document.querySelector('#date');
+                let time = document.querySelector('#time');
+                let request = document.querySelector('#request');
     
-                if(name.length == 0){
+                if(name.value.length == 0){
                     alert('이름을 입력하세요');
                     return;
                 }
-                if(tel.length == 0){
+                if(tel.value.length == 0){
                     alert('전화번호를 입력하세요.');
                     return;
                 }
-                if(email.length == 0){
+                if(email.value.length == 0){
                     alert('이메일을 입력하세요.');
                     return;
                 }
+                if(sizeChecked.length == 0){
+                    alert('사이즈를 체크하세요');
+                    return;
+                }
+                if(toppingChecked.length == 0){
+                    alert('토핑 추가를 하지 않으셨습니다.')
+                    return;
+                }
+                if(toppingChecked.length == 4){
+                    alert('토핑은 최대 3개까지 추가 가능합니다.')
+                    return;
+                }
+                if(date.value == ''){
+                    alert('희망 배송 일을 지정하세요.')
+                    return;
+                }
+                if(time.value == ''){
+                    alert('희망 배송 시간을 지정하세요.')
+                    return;
+                }
+                if(request.value.length == 0){
+                    let res = confirm('배송시 요청사항이 없는것이 확실합니까?');
+                    if(res){
+                        alert('주문을 진행합니다.');
+                        orderForm.submit();
+                    }
+                    return;
+                }
 
-                orderForm.submit();
             })
         </script>
     </form>
