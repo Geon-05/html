@@ -70,7 +70,7 @@ function init() {
     // if (userId1.value == '')
 
     // 정규식을 이용한 패턴체크
-    let regExp = /^[a-zA-Z-0-9]{5,12}$/;
+    let regExp = /^[a-zA-Z0-9]{5,12}$/;
     // 패턴검사
     if(!regExp.test(userId1.value)){
         alert('아이디는 영어 대소문자와 숫자만 입력가능합니다.\n길이는 5~12까지 입력 가능 합니다.')
